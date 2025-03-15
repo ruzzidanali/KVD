@@ -1,0 +1,149 @@
+{
+  "lastUpdated": "2025-03-13T16:55:06.564Z",
+  "exchangeRates": [
+    {
+      "country": "United States",
+      "flag": "https://flagpedia.net/data/flags/h80/us.png",
+      "sellRate": "4.5238",
+      "buyRate": "4.3352"
+    },
+    {
+      "country": "Singapore",
+      "flag": "https://flagpedia.net/data/flags/h80/sg.png",
+      "sellRate": "3.3985",
+      "buyRate": "3.2502"
+    },
+    {
+      "country": "New Zealand",
+      "flag": "https://flagpedia.net/data/flags/h80/nz.png",
+      "sellRate": "2.6164",
+      "buyRate": "2.4665"
+    },
+    {
+      "country": "United Kingdom",
+      "flag": "https://flagpedia.net/data/flags/h80/gb.png",
+      "sellRate": "5.8602",
+      "buyRate": "5.6237"
+    },
+    {
+      "country": "Eurozone",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/320px-Flag_of_Europe.svg.png",
+      "sellRate": "4.9344",
+      "buyRate": "4.7088"
+    },
+    {
+      "country": "Canada",
+      "flag": "https://flagpedia.net/data/flags/h80/ca.png",
+      "sellRate": "3.1551",
+      "buyRate": "3.0114"
+    },
+    {
+      "country": "Brunei",
+      "flag": "https://flagpedia.net/data/flags/h80/bn.png",
+      "sellRate": "3.4046",
+      "buyRate": "3.2443"
+    },
+    {
+      "country": "Australia",
+      "flag": "https://flagpedia.net/data/flags/h80/au.png",
+      "sellRate": "2.8821",
+      "buyRate": "2.7241"
+    },
+    {
+      "country": "United Arab Emirates",
+      "flag": "https://flagpedia.net/data/flags/h80/ae.png",
+      "sellRate": "125.3000",
+      "buyRate": "115.9100"
+    },
+    {
+      "country": "Switzerland",
+      "flag": "https://flagpedia.net/data/flags/h80/ch.png",
+      "sellRate": "512.9300",
+      "buyRate": "491.7300"
+    },
+    {
+      "country": "China",
+      "flag": "https://flagpedia.net/data/flags/h80/cn.png",
+      "sellRate": "62.4100",
+      "buyRate": "59.9600"
+    },
+    {
+      "country": "Denmark",
+      "flag": "https://flagpedia.net/data/flags/h80/dk.png",
+      "sellRate": "67.2200",
+      "buyRate": "62.0500"
+    },
+    {
+      "country": "Hong Kong",
+      "flag": "https://flagpedia.net/data/flags/h80/hk.png",
+      "sellRate": "58.6000",
+      "buyRate": "55.4200"
+    },
+    {
+      "country": "Indonesia",
+      "flag": "https://flagpedia.net/data/flags/h80/id.png",
+      "sellRate": "0.0280",
+      "buyRate": "N/A"
+    },
+    {
+      "country": "Philippines",
+      "flag": "https://flagpedia.net/data/flags/h80/ph.png",
+      "sellRate": "8.0200",
+      "buyRate": "N/A"
+    },
+    {
+      "country": "India",
+      "flag": "https://flagpedia.net/data/flags/h80/in.png",
+      "sellRate": "5.2860",
+      "buyRate": "N/A"
+    },
+    {
+      "country": "Japan",
+      "flag": "https://flagpedia.net/data/flags/h80/jp.png",
+      "sellRate": "3.0600",
+      "buyRate": "2.9110"
+    },
+    {
+      "country": "Sri Lanka",
+      "flag": "https://flagpedia.net/data/flags/h80/lk.png",
+      "sellRate": "1.5590",
+      "buyRate": "N/A"
+    },
+    {
+      "country": "Norway",
+      "flag": "https://flagpedia.net/data/flags/h80/no.png",
+      "sellRate": "43.3100",
+      "buyRate": "39.9800"
+    },
+    {
+      "country": "Saudi Arabia",
+      "flag": "https://flagpedia.net/data/flags/h80/sa.png",
+      "sellRate": "122.1700",
+      "buyRate": "114.0400"
+    },
+    {
+      "country": "Sweden",
+      "flag": "https://flagpedia.net/data/flags/h80/se.png",
+      "sellRate": "45.6700",
+      "buyRate": "42.1600"
+    },
+    {
+      "country": "Thailand",
+      "flag": "https://flagpedia.net/data/flags/h80/th.png",
+      "sellRate": "13.6330",
+      "buyRate": "12.5840"
+    },
+    {
+      "country": "South Africa",
+      "flag": "https://flagpedia.net/data/flags/h80/za.png",
+      "sellRate": "25.1400",
+      "buyRate": "23.2100"
+    },
+    {
+      "country": "Gold",
+      "flag": "https://img.icons8.com/?size=100&id=20043&format=png&color=000000",
+      "sellRate": "1327.60930",
+      "buyRate": "1275.54620"
+    }
+  ]
+}

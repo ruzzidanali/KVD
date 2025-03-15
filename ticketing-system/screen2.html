@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Number Entry</title>
+    <style>
+        body {
+            font-family: Trebuchet MS, sans-serif;
+            background-color: #0047bb;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+        }
+        .title {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 15px;
+        }
+        .form-container input, .form-container select {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            background-color: yellow;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .form-container button:hover {
+            background-color: #e0a800;
+        }
+        .error-message {
+            color: red;
+        }
+        .button-container button {
+            background-color: yellow;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+            margin: 25px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+            width: 100%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Sila masukkan nombor telefon anda untuk menerima notis tiket melalui SMS<br><br><small>Please enter your mobile number to receive ticket notification via SMS</small></h2>
+        <br>
+        <div class="form-container">
+            <form id="mobileForm">
+                <div>
+                    <label style="color: yellow;" for="countryCode">Kod panggilan negara<br><small>Country Code</small></label>
+                    <select id="countryCode">
+                        <option value="60">Malaysia</option>
+                        <option value="65">Singapore</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="color: yellow;" for="countryCode">Nombor Telefon<br><small>Mobile Number</small></label>
+                    <input type="text" id="mobileNumber">
+                </div>
+                <div class="button-container">
+                    <button class="service-button" type="button" id="getTicketButton">Dapatkan tiket<br><small>Get a ticket</small></button>
+                </div>
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('getTicketButton').addEventListener('click', function() {
+            var countryCode = document.getElementById('countryCode').value;
+            var mobileNumber = document.getElementById('mobileNumber').value;
+            var errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = '';
+
+            if (!countryCode || !mobileNumber) {
+                errorMessage.innerHTML = 'Sila isi semua maklumat.<br><small>Please fill in both fields.</small>';
+            } else if (!/^\d{10}$/.test(mobileNumber)) {
+                errorMessage.innerHTML = 'Sila isi 10-digit nombor telefon yang sah.<br><small>Please enter a valid 10-digit mobile number.</small>';
+            } else {
+                sessionStorage.setItem('mobileNumber', countryCode + mobileNumber);
+                window.location.href = 'screen3.html';
+            }
+        });
+    </script>
+</body>
+</html>

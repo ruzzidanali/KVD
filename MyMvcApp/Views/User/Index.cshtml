@@ -1,0 +1,38 @@
+@model IEnumerable<MyMvcApp.Models.User>
+
+@{
+    ViewData["Title"] = "Users List";
+}
+
+<h2>Users</h2>
+<a asp-action="Create" class="btn btn-primary">Create New User</a>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.CreatedAt.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-danger" 
+                       onclick="return confirm('Are you sure you want to delete this user?');">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

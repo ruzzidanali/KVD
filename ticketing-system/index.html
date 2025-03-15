@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Selection</title>
+    <style>
+        body {
+            font-family: Trebuchet MS, sans-serif;
+            background-color: #0047bb;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .title {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
+            padding: 20px;
+        }
+        .button-container button {
+            background-color: yellow;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 15px;
+            margin: 25px 2px;
+            cursor: pointer;
+            border-radius: 50px;
+            width: 100%;
+            font-weight: bold;
+        }
+        .button-container button:hover {
+            background-color: #e0a800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Sila Pilih Perkhidmatan <br><small>Please Select a Service</small></h2>
+        <div class="button-container">
+            <button class="service-button" data-service="Pascabayar">Pascabayar<br><small>Postpaid</small></button>
+            <button class="service-button" data-service="Peranti Rumah">Peranti Rumah<br><small>Home Fibre</small></button>
+            <button class="service-button" data-service="Tawaran Korporat">Tawaran Korporat<br><small>Corporate Deals</small></button>
+            <button class="service-button" data-service="Perkhidmatan Lain-lain">Perkhidmatan Lain-lain<br><small>Other Services</small></button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.service-button').forEach(button => {
+            button.addEventListener('click', function() {
+                sessionStorage.setItem('selectedService', this.dataset.service);
+                window.location.href = 'screen2.html';
+            });
+        });
+    </script>
+</body>
+</html>

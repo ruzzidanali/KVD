@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Exchange Rates</h2>
+        <p id="lastUpdated" class="last-updated">Last Updated: Loading...</p>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Flag</th>
+                    <th>Sell Rate</th>
+                    <th>Buy Rate</th>
+                </tr>
+            </thead>
+            <tbody id="exchangeRatesTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let allExchangeRates = [];
+        let currentIndex = 0;
+        const rowsPerCycle = 10;
+
+        async function fetchData() {
+            try {
+                const response = await fetch("http://localhost:3000/api/exchange-rates");
+                const data = await response.json();
+
+                if (!data.exchangeRates || data.exchangeRates.length === 0) {
+                    document.getElementById("exchangeRatesTable").innerHTML = "<tr><td colspan='4' class='loading'>No data available</td></tr>";
+                    return;
+                }
+
+                document.getElementById("lastUpdated").innerText = "Last Updated: " + new Date(data.lastUpdated).toLocaleString();
+
+                allExchangeRates = data.exchangeRates;
+
+                displayRows();
+
+            } catch (error) {
+                console.error("Error fetching exchange rates:", error);
+                document.getElementById("exchangeRatesTable").innerHTML = "<tr><td colspan='4' class='loading'>Failed to load data</td></tr>";
+            }
+        }
+
+        function displayRows() {
+            let html = "";
+            const endIndex = Math.min(currentIndex + rowsPerCycle, allExchangeRates.length);
+
+            for (let i = currentIndex; i < endIndex; i++) {
+                const rate = allExchangeRates[i];
+                html += `
+                    <tr>
+                        <td>${rate.country}</td>
+                        <td><img src="${rate.flag}" alt="${rate.country} Flag"></td>
+                        <td>${rate.sellRate}</td>
+                        <td>${rate.buyRate}</td>
+                    </tr>
+                `;
+            }
+
+            document.getElementById("exchangeRatesTable").innerHTML = html;
+
+            currentIndex += rowsPerCycle;
+            if (currentIndex >= allExchangeRates.length) {
+                currentIndex = 0;  
+            }
+        }
+
+        fetchData();
+        setInterval(displayRows, 120000);  
+        setInterval(fetchData, 120000);  
+    </script>
+</body>
+</html>
